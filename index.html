@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Restoran Pak Hassan | Masakan Kampung</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="atas">
+    <a class="logo" href="#">Pak Hassan</a>
+    <nav aria-label="Menu utama">
+      <a href="#menu">Menu</a>
+      <a href="#tempah">Tempah meja</a>
+      <a href="#waktu">Waktu dan lokasi</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="dalam">
+      <h1>Nasi lemak panas, sambal pedas, siap sebelum anda lapar.</h1>
+      <p>Masakan kampung dimasak setiap pagi mengikut resipi keluarga sejak 1995.</p>
+      <div class="butang-baris">
+        <a class="btn kuning" href="#tempah">Tempah meja</a>
+        <a class="btn garis" href="#menu">Lihat menu</a>
+      </div>
+    </div>
+    <div class="jubin" aria-hidden="true"></div>
+  </section>
+
+  <section id="menu" class="bahagian">
+    <div class="dalam">
+      <h2>Menu kami</h2>
+      <div class="tab-baris" role="group" aria-label="Kategori menu">
+        <button class="tab" data-kat="semua" aria-pressed="true">Semua</button>
+        <button class="tab" data-kat="makanan" aria-pressed="false">Makanan</button>
+        <button class="tab" data-kat="minuman" aria-pressed="false">Minuman</button>
+        <button class="tab" data-kat="pencuci" aria-pressed="false">Pencuci mulut</button>
+      </div>
+      <ul id="senarai" class="senarai"></ul>
+    </div>
+  </section>
+
+  <section id="tempah" class="bahagian latar">
+    <div class="dalam">
+      <h2>Tempah meja</h2>
+      <form id="borang" class="borang">
+        <label>Nama
+          <input type="text" name="nama" required autocomplete="name">
+        </label>
+        <label>Nombor telefon
+          <input type="tel" name="telefon" required placeholder="012-345 6789" autocomplete="tel">
+        </label>
+        <label>Tarikh
+          <input type="date" name="tarikh" id="tarikh" required>
+        </label>
+        <label>Masa
+          <input type="time" name="masa" min="07:00" max="21:30" value="12:30" required>
+        </label>
+        <label>Bilangan orang
+          <input type="number" name="orang" min="1" max="20" value="2" required>
+        </label>
+        <button type="submit" class="btn merah">Hantar tempahan</button>
+      </form>
+      <p id="mesej" class="mesej" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <section id="waktu" class="bahagian">
+    <div class="dalam">
+      <h2>Waktu dan lokasi</h2>
+      <div class="maklumat">
+        <div>
+          <h3>Waktu buka</h3>
+          <p>Setiap hari<br>7.00 pagi hingga 10.00 malam</p>
+        </div>
+        <div>
+          <h3>Alamat</h3>
+          <p>No. 12, Jalan Contoh,<br>Taman Sentosa</p>
+        </div>
+        <div>
+          <h3>Telefon</h3>
+          <p>012-345 6789</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="kaki">
+    <p>Restoran Pak Hassan. Semua hak terpelihara.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

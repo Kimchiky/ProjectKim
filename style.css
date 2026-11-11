@@ -1,0 +1,188 @@
+:root {
+  --teal: #12616b;
+  --teal-gelap: #0b3f46;
+  --merah: #d6382b;
+  --kunyit: #f2b21b;
+  --ink: #14262a;
+  --jubin: #eef5f3;
+  --latar: #e1eeeb;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito Sans", system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: #fff;
+}
+
+h1, h2, h3 {
+  font-family: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
+  line-height: 1.1;
+  margin: 0;
+}
+
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 3px solid var(--kunyit);
+  outline-offset: 2px;
+}
+
+.dalam { max-width: 960px; margin: 0 auto; }
+
+/* Header */
+.atas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background: var(--teal-gelap);
+}
+.logo {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--kunyit);
+  text-decoration: none;
+}
+.atas nav { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.atas nav a { color: var(--jubin); text-decoration: none; font-weight: 700; }
+.atas nav a:hover { color: var(--kunyit); }
+
+/* Hero */
+.hero { background: var(--teal); color: var(--jubin); }
+.hero .dalam { padding: 72px 20px 56px; }
+.hero h1 {
+  max-width: 14em;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 800;
+}
+.hero p { max-width: 32em; margin: 18px 0 28px; font-size: 1.15rem; }
+.jubin {
+  height: 56px;
+  background: repeating-conic-gradient(var(--jubin) 0 25%, var(--teal-gelap) 0 50%) 0 0 / 56px 56px;
+}
+
+/* Butang */
+.butang-baris { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-block;
+  padding: 11px 26px;
+  font: 700 1.05rem "Nunito Sans", sans-serif;
+  text-decoration: none;
+  border: 3px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.btn.kuning { background: var(--kunyit); color: var(--ink); }
+.btn.garis { border-color: var(--jubin); color: var(--jubin); }
+.btn.merah { background: var(--merah); color: #fff; }
+.btn:hover { filter: brightness(1.08); }
+
+/* Bahagian */
+.bahagian { padding: 56px 20px; }
+.bahagian.latar { background: var(--latar); }
+.bahagian h2 { font-size: 2rem; margin-bottom: 22px; }
+
+/* Menu */
+.tab-baris { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+.tab {
+  padding: 7px 18px;
+  font: 700 1rem "Nunito Sans", sans-serif;
+  color: var(--ink);
+  background: transparent;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.tab[aria-pressed="true"] { background: var(--merah); border-color: var(--merah); color: #fff; }
+
+.senarai {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 24px 48px;
+}
+.hidang {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+.foto {
+  position: relative;
+  width: 92px;
+  height: 92px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  font-size: 2.6rem;
+  background: var(--latar);
+  border-radius: 16px;
+}
+.foto.makanan { background: #fbe2ad; }
+.foto.minuman { background: #cde7e3; }
+.foto.pencuci { background: #f6cfca; }
+.foto img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+}
+.foto img.siap { opacity: 1; }
+.baris { display: flex; align-items: baseline; gap: 8px; }
+.nama { font-weight: 700; }
+.titik { flex: 1; border-bottom: 2px dotted #8fb0ac; }
+.harga { font-weight: 700; color: var(--merah); white-space: nowrap; }
+.senarai p { margin: 2px 0 0; font-size: 0.93rem; color: #435a5d; }
+
+/* Borang */
+.borang {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+  align-items: end;
+}
+.borang label { display: grid; gap: 4px; font-weight: 700; }
+.borang input {
+  padding: 10px 12px;
+  font: inherit;
+  color: var(--ink);
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+}
+.mesej { margin: 16px 0 0; font-weight: 700; }
+.mesej.ok { color: var(--teal-gelap); }
+.mesej.ralat { color: #a3231a; }
+
+/* Maklumat */
+.maklumat {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+.maklumat h3 { font-size: 1.2rem; margin-bottom: 4px; color: var(--teal); }
+.maklumat p { margin: 0; }
+
+/* Footer */
+.kaki {
+  padding: 22px 20px;
+  text-align: center;
+  background: var(--teal-gelap);
+  color: var(--jubin);
+}
+.kaki p { margin: 0; font-size: 0.95rem; }
